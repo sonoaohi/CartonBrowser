@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "media-switch",
+  "version": "1.0",
+  "description": "Allow blocking media.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "media-switch@example.com"
+    }
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "nativeMessaging",
+    "geckoViewAddons",
+    "<all_urls>",
+    "webRequest",
+    "webRequestBlocking"
+  ]
+}
+
