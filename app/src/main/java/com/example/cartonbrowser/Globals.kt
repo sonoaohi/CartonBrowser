@@ -533,6 +533,9 @@ fun setValueInSearchEngineConfigMap(key: String, value: String) {
 
 fun delValueInSearchEngineConfigMap(key: String) {
     Globals.searchEngineConfigMap.remove(key)
+    if (Globals.searchEngineConfigMap.isEmpty()) {
+        Globals.searchEngineConfigMap = defaultSearchEngineJsonString.toSearchEngineConfigMap()
+    }
     with (Globals.sharedPreferences.edit()) {
         this.putString("searchEngineConfigJsonString",
             Globals.searchEngineConfigMap.toSearchEngineConfigJsonString())
