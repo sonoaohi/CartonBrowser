@@ -3,6 +3,15 @@ package com.example.cartonbrowser
 import android.os.LocaleList
 import android.text.BidiFormatter
 
+// Notes on accept_languages:
+// Desktop Firefox uses a different mechanism to specify accept_languages than Android Firefox
+// or GeckoView.
+// On desktop Firefox, files named intl.properties residing in language packs are used to determine
+// the accept_languages of the corresponding language settings.
+// On Android Firefox or GeckoView, Gecko will use directly system settings for accept_languages.
+// For the time being, it is decided that the current project shall leave this behavior untouched,
+// to align with Android Firefox's behaviour.
+
 interface LangStringsStore {
     val langTag: String
     val bidiFormatter: BidiFormatter
