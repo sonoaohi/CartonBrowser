@@ -16,6 +16,8 @@ interface LangStringsStore {
     val langTag: String
     val bidiFormatter: BidiFormatter
 
+    val addressBarMoreButtonContentDescription: String
+
     val contextMenuOpenNewTabString: String
     val contextMenuCopyLinkAddressString: String
 
@@ -33,19 +35,17 @@ interface LangStringsStore {
     val textPromptEnterButtonString: String
 
     val sessionReloadButtonText: String
-    val sessionReloadButtonIconDescription: String
 
     val imagesToggleButtonText: String
-    val imagesToggleButtonIconDescription: String
 
     val mediaToggleButtonText: String
-    val mediaToggleButtonIconDescription: String
 
     val webfontsToggleButtonText: String
-    val webfontsToggleButtonIconDescription: String
 
     val javascriptToggleButtonText: String
-    val javascriptToggleButtonIconDescription: String
+
+    val toggleButtonEnabledStateDescription: String
+    val toggleButtonDisabledStateDescription: String
 
     val sessionHistoryListItemOverlineTextCurrent: String
     val sessionHistoryListItemOverlineTextNoncurrent: String
@@ -92,7 +92,6 @@ interface LangStringsStore {
     val portalScreenBookmarksSectionHeaderText: String
 
     val newTabButtonTextString: String
-    val newTabButtonIconDescription: String
 
     val tabItemCloseTabButtonIconDescription: String
     val tabItemCurrentTabFormatString: String
@@ -128,6 +127,7 @@ object EnglishStringsStore: LangStringsStore {
     override val langTag: String = "en-US"
     override val bidiFormatter: BidiFormatter = BidiFormatter.getInstance()
 
+    override val addressBarMoreButtonContentDescription = bidiFormatter.unicodeWrap("More")
 
     override val contextMenuOpenNewTabString = bidiFormatter.unicodeWrap("Open In New Tab")
     override val contextMenuCopyLinkAddressString = bidiFormatter.unicodeWrap("Copy Link Address")
@@ -146,19 +146,17 @@ object EnglishStringsStore: LangStringsStore {
     override val textPromptEnterButtonString = bidiFormatter.unicodeWrap("Enter")
 
     override val sessionReloadButtonText = bidiFormatter.unicodeWrap("Reload")
-    override val sessionReloadButtonIconDescription = bidiFormatter.unicodeWrap("")
 
     override val imagesToggleButtonText = bidiFormatter.unicodeWrap("Image")
-    override val imagesToggleButtonIconDescription = bidiFormatter.unicodeWrap("Image")
 
     override val mediaToggleButtonText = bidiFormatter.unicodeWrap("Media")
-    override val mediaToggleButtonIconDescription = bidiFormatter.unicodeWrap("Media")
 
     override val webfontsToggleButtonText = bidiFormatter.unicodeWrap("Font")
-    override val webfontsToggleButtonIconDescription = bidiFormatter.unicodeWrap("Font")
 
     override val javascriptToggleButtonText = bidiFormatter.unicodeWrap("Javascript")
-    override val javascriptToggleButtonIconDescription = bidiFormatter.unicodeWrap("Javascript")
+
+    override val toggleButtonEnabledStateDescription = bidiFormatter.unicodeWrap("Enabled")
+    override val toggleButtonDisabledStateDescription = bidiFormatter.unicodeWrap("Disabled")
 
     override val sessionHistoryListItemOverlineTextCurrent = bidiFormatter.unicodeWrap("#%s CURRENT")
     override val sessionHistoryListItemOverlineTextNoncurrent = bidiFormatter.unicodeWrap("#%s")
@@ -204,7 +202,6 @@ object EnglishStringsStore: LangStringsStore {
     override val portalScreenBookmarksSectionHeaderText = bidiFormatter.unicodeWrap("Bookmarks")
 
     override val newTabButtonTextString = bidiFormatter.unicodeWrap("New Tab")
-    override val newTabButtonIconDescription = bidiFormatter.unicodeWrap("New Tab")
 
     override val tabItemCloseTabButtonIconDescription = bidiFormatter.unicodeWrap("Close Tab")
     override val tabItemCurrentTabFormatString = bidiFormatter.unicodeWrap("#%s CURRENT")

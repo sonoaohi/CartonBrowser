@@ -28,6 +28,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.cartonbrowser.Globals.currentStringsStore
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -91,7 +92,7 @@ fun AddressBar(modifier: Modifier = Modifier) {
                     )
                     Icon(
                         Icons.Outlined.MoreVert,
-                        contentDescription = "Localized description",
+                        contentDescription = currentStringsStore.addressBarMoreButtonContentDescription,
                         tint = tint
                     )
                 }

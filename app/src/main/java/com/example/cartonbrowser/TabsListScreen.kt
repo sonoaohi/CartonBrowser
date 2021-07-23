@@ -180,7 +180,7 @@ fun NewTabButton() {
     ) {
         Icon(
             Icons.Rounded.Add,
-            contentDescription = currentStringsStore.newTabButtonIconDescription,
+            contentDescription = null,
             modifier = Modifier.size(ButtonDefaults.IconSize)
         )
         Spacer(Modifier.size(ButtonDefaults.IconSpacing))
@@ -199,7 +199,7 @@ fun SessionReloadButton() {
         border = BorderStroke(1.dp, MaterialTheme.colors.primary)
     ) {
         Icon(Icons.Rounded.Refresh,
-            contentDescription = currentStringsStore.sessionReloadButtonIconDescription, modifier = Modifier.size(ButtonDefaults.IconSize))
+            contentDescription = null, modifier = Modifier.size(ButtonDefaults.IconSize))
         Spacer(Modifier.size(ButtonDefaults.IconSpacing))
         Text(currentStringsStore.sessionReloadButtonText, style = MaterialTheme.typography.caption)
     }

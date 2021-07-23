@@ -17,6 +17,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
@@ -122,7 +124,8 @@ fun BookmarksComposable(modifier: Modifier = Modifier) {
     Text(
         text = currentStringsStore.portalScreenBookmarksSectionHeaderText,
         modifier = modifier
-            .padding(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 8.dp),
+            .padding(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 8.dp)
+            .semantics { heading() },
         style = MaterialTheme.typography.overline
     )
     Divider(modifier = modifier)

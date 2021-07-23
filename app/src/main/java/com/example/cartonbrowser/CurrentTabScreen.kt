@@ -15,6 +15,8 @@ import androidx.compose.material.icons.rounded.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.unit.dp
 import com.example.cartonbrowser.Globals.currentStringsStore
 import kotlinx.coroutines.launch
@@ -81,11 +83,18 @@ fun ImagesToggleButton() {
         border = BorderStroke(1.dp, MaterialTheme.colors.primary),
         colors = (if (imagesButtonChecked)
             ButtonDefaults.buttonColors()
-        else ButtonDefaults.textButtonColors())
+        else ButtonDefaults.textButtonColors()),
+        modifier = Modifier.semantics {
+            stateDescription = if (imagesButtonChecked) {
+                currentStringsStore.toggleButtonEnabledStateDescription
+            } else {
+                currentStringsStore.toggleButtonDisabledStateDescription
+            }
+        }
     ) {
         Icon(
             if (imagesButtonChecked) Icons.Rounded.CheckCircle else Icons.Rounded.Close,
-            contentDescription = currentStringsStore.imagesToggleButtonIconDescription,
+            contentDescription = null,
             modifier = Modifier.size(ButtonDefaults.IconSize)
         )
         Spacer(Modifier.size(ButtonDefaults.IconSpacing))
@@ -107,11 +116,18 @@ fun MediaToggleButton() {
         border = BorderStroke(1.dp, MaterialTheme.colors.primary),
         colors = (if (mediaButtonChecked)
             ButtonDefaults.buttonColors()
-        else ButtonDefaults.textButtonColors())
+        else ButtonDefaults.textButtonColors()),
+        modifier = Modifier.semantics {
+            stateDescription = if (mediaButtonChecked) {
+                currentStringsStore.toggleButtonEnabledStateDescription
+            } else {
+                currentStringsStore.toggleButtonDisabledStateDescription
+            }
+        }
     ) {
         Icon(
             if (mediaButtonChecked) Icons.Rounded.CheckCircle else Icons.Rounded.Close,
-            contentDescription = currentStringsStore.mediaToggleButtonIconDescription,
+            contentDescription = null,
             modifier = Modifier.size(ButtonDefaults.IconSize)
         )
         Spacer(Modifier.size(ButtonDefaults.IconSpacing))
@@ -133,11 +149,18 @@ fun WebfontsToggleButton() {
         border = BorderStroke(1.dp, MaterialTheme.colors.primary),
         colors = (if (webfontsButtonChecked)
             ButtonDefaults.buttonColors()
-        else ButtonDefaults.textButtonColors())
+        else ButtonDefaults.textButtonColors()),
+        modifier = Modifier.semantics {
+            stateDescription = if (webfontsButtonChecked) {
+                currentStringsStore.toggleButtonEnabledStateDescription
+            } else {
+                currentStringsStore.toggleButtonDisabledStateDescription
+            }
+        }
     ) {
         Icon(
             if (webfontsButtonChecked) Icons.Rounded.CheckCircle else Icons.Rounded.Close,
-            contentDescription = currentStringsStore.webfontsToggleButtonIconDescription,
+            contentDescription = null,
             modifier = Modifier.size(ButtonDefaults.IconSize)
         )
         Spacer(Modifier.size(ButtonDefaults.IconSpacing))
@@ -159,11 +182,18 @@ fun JavascriptToggleButton() {
         border = BorderStroke(1.dp, MaterialTheme.colors.primary),
         colors = (if (javascriptButtonChecked)
             ButtonDefaults.buttonColors()
-        else ButtonDefaults.textButtonColors())
+        else ButtonDefaults.textButtonColors()),
+        modifier = Modifier.semantics {
+            stateDescription = if (javascriptButtonChecked) {
+                currentStringsStore.toggleButtonEnabledStateDescription
+            } else {
+                currentStringsStore.toggleButtonDisabledStateDescription
+            }
+        }
     ) {
         Icon(
             if (javascriptButtonChecked) Icons.Rounded.CheckCircle else Icons.Rounded.Close,
-            contentDescription = currentStringsStore.javascriptToggleButtonIconDescription,
+            contentDescription = null,
             modifier = Modifier.size(ButtonDefaults.IconSize)
         )
         Spacer(Modifier.size(ButtonDefaults.IconSpacing))
