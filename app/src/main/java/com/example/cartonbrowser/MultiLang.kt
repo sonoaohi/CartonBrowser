@@ -119,7 +119,7 @@ object LocalizedStringsProvider {
         return registry[currentLangTag]!!
     }
 
-    fun updateCurrentLangCode() {
+    fun setCurrentLangTagWithSystemOrFallbackConfig() {
         currentLangTag = LocaleList.getDefault().getFirstMatch(registry.keys.toTypedArray())?.toLanguageTag() ?: "en-US"
     }
 }

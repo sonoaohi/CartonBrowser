@@ -75,7 +75,7 @@ class MainActivity : ComponentActivity() {
                     "bookmarkConfigJsonString", JSONObject().toString()
                 )!!.toBookmarkConfigSet()
 
-            LocalizedStringsProvider.updateCurrentLangCode()
+            LocalizedStringsProvider.setCurrentLangTagWithSystemOrFallbackConfig()
             Globals.currentStringsStore = LocalizedStringsProvider.getCurrentStringsStore()
 
             Globals.geckoRuntime = createGeckoRuntime()
